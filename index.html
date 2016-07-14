@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0;
+            color:white;
+            font-family: lato;}
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+        .mapboxgl-popup {
+            max-width: 400px;
+            font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            color:black
+        }
+        #info {
+            position:absolute;
+            padding: 25px;
+            background-color: rgba(0, 0, 0, .55);
+            width:250px
+        }
+        #greater32{color:#ff8400;text-align: center;}
+        #less32{color:#d8d4d4;text-align: center;}
+        @media screen and (max-width: 40em) {
+        #info{font-size: xx-small;}
+        }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3J1emluNzN2dyIsImEiOiJjaW80MHJvNzgwMWcwdmFrams0OHAxaWozIn0.6TXveIiYaYPFdf8QTO6Ssw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/cruzin73vw/ciqmuv5y70000bhmb5sabnd0k',
+    center: [-118.483299, 34.024549],
+    hash: true,
+    zoom: 14,
+    minZoom:14
+});
+
+    
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['greaterthan32','lessthan32'] });
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(map.unproject(e.point))
+        .setHTML("<p>Height: "+feature.properties.HEIGHT+" Feet")
+        .addTo(map);
+});
+
+// Use the same approach as above to indicate that the symbols are clickable
+// by changing the cursor style to 'pointer'.
+map.on('mousemove', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['greaterthan32','lessthan32'] });
+    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+});
+</script>
+
+    <div id="info">
+    <h2>samo exploration 1 | buildings > 32'</h1>
+    <h3 id="greater32">Bldg greater than 32'</h3>
+    <h3 id="less32">Bldgs less than 32'</h3>
+        <p>Using data from 2008, there are about <b>24,130</b> Buildings in the City of Santa Monica.</p>
+        <p><b>1,493</b> (about 6%) of those buildings are greater than or equal to 32 feet. <b>22,637</b> (about 94 %) buildings are less than 32 feet.</p><p>Click on a building to get the height</p>
+    <p>This exploratory map is intended for discussion purposes. There will be discrepancies, map info on <a href="https://github.com/cityhubla/samo_exploration_1">GITHUB</a></p>
+    <p>made by <a href="https://twitter.com/theworksla">theworksLA</a></p>
+    </div>
+    
+</body>
+</html>
