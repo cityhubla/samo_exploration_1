@@ -16,3 +16,9 @@ Data obtained from the [Countywide Building Outlines -2008](http://egis3.lacount
   * DATE - Date Captured (2006, 2008, or blank)
   * AIN - the Parcel ID number.  This was computed from the center of the building.  If a building covers two parcels, only one of the parcels will be captured.  If a building contains many parcels (Condominiums for example) only one of the parcels will be captured.
 
+###Next Steps
+* Link this data with the Local Roll of the [LA County Assessor](https://data.lacounty.gov/Parcel-/Assessor-Parcels-Data-2006-thru-2016/9trm-uz8i) to identify:
+ * The year the building was built
+ * Type of building (Single Family, Duplex for example)
+ * Number of Units (Residential)
+ * Other fields within the LA County Assessor
