@@ -23,3 +23,6 @@
  * Type of building (Single Family, Duplex for example)
  * Number of Units (Residential)
  * Other fields within the LA County Assessor
+
+###Questions?
+* There will be discrepancies. The data can be downloaded for your use and analysis. Contact me if there are issues, twitter @theworksla
