@@ -4,7 +4,8 @@
 * The data contained in the `HEIGHT` field is `the height of the highest major feature of the building (not including roof objects like antennas and chimneys)`
 
 ###Sources
-Data obtained from the [Countywide Building Outlines -2008](http://egis3.lacounty.gov/dataportal/2011/04/28/countywide-building-outlines/)
+* Data obtained from the [Countywide Building Outlines -2008](http://egis3.lacounty.gov/dataportal/2011/04/28/countywide-building-outlines/)
+* A geojson was made contianing only AIN and HEIGHT data, which can be downloaded from this repo.
 
 * Fields in the Dataset (Per descriptions from County)
   * CODE - Building type (either Building or Couryard).  Note that in areas not covered by LAR-IAC courtyards are not tagged as such.
