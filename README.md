@@ -3,6 +3,8 @@
 * This exploration visualizes the building heights in the City of Santa Monica using the publically availble 2008 Countywide Building Outlines dataset (A 2014 dataset is available, but to agencies and members of the LARIAC (Los Angeles Region Imagery Acquisition Consortium Program)
 * The data contained in the `HEIGHT` field is `the height of the highest major feature of the building (not including roof objects like antennas and chimneys)`
 
+###[Click here for current version of the map](https://cityhubla.github.io/samo_exploration_1/)
+
 ###Sources
 * Data obtained from the [Countywide Building Outlines -2008](http://egis3.lacounty.gov/dataportal/2011/04/28/countywide-building-outlines/)
 * A geojson was made contianing only AIN and HEIGHT data, which can be downloaded from this repo.
